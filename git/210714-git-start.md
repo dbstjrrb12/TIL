@@ -174,5 +174,112 @@ git의 장점 중 하나는 바로 branch를 통해, 하나의 저장소 안에 
 origin(주소 별명)의 main 브랜치로 저장을 push 하는 명령어 이다. 
 
 
+## Github 블로그 만들기 
+
+github를 이용해서 블로그를 만드는 방법과 hexo theme을 적용하는 방법에 대해 알아본다. 
+
+### Github 저장소 만들어 주기 
+
+1. 우선 자신의 github 저장소에 다음과 같은 이름의 저장소를 생성(new)한다. 
+
+    {github 계정이륾}.github.io
+
+> 주의할 점은 반드시 계정이름과 동일해야 한다. 
+
+2. 새롭게 만들어진 github 주소를 복사한 후, 자신의 블로그를 관리할 로컬 디렉토리에 복제(clone)한다. 
+
+위에 로컬 디렉토리에서 github 저장소와 연결한 것처럼, 자신의 블로그에 포스팅을 관리할 로컬 디렉토리(e.g my-blog etc)를 만들고 다음 명령어를 입력한다 
+
+    $ git clone {username.github.io url}
+
+### Hexo 만들기  
+
+>Hexo는 빠르고 간단하고 파워풀한 블로그 프레임워크입니다. Markdown(또는 다른 언어)을 사용하여 포스트를 작성하면 Hexo는 금세 멋진 테마를 가미해서 정적인 파일을 생성해 드립니다.
+
+    > hexo.io 홈페이지 다큐멘테이션 참고 
+
+hexo를 이용하기 위해서는 요구 조건이 있습니다. 
+
+    1. git 설치 
+    2. node 설치 
+
+node 설치 방법은 다음과 같다 
+
+* Window : [nvm](https://github.com/nvm-sh/nvm)
+
+* Mac : Homebrew 사용 
+> $ brew install node 
+
+위의 조건을 충족하면 다음과 같이 hexo 를 설치하면 된다. 
+
+    $ npm install -g hexo-cli
 
 
+1. hexo init {blog name}
+
+    $ hexo init {blog name}
+    $ npm install
+
+자신의 블로그 이름의 디렉토리를 만듭니다. 
+
+2. .config.yml 파일을 수정합니다. (원하는 에디터를 실행해서 파일 안에 있는 정보를 수정합니다)
+
+* 사이트 정보 수정 
+
+    title: {원하는 타이을}
+    subtitle: {원하는 부제}
+    description:
+    author: {글쓴이}
+
+* Url 정보 수정 
+    url: https://USERNAME.github.io
+    root: /
+    permalink: :year/:month/:day/:title/
+    permalink_defaults:
+
+자신의 github 계정 주소를 작성합니다. 
+
+* github 정보 수정 
+    deploy:
+    type: git
+    repo: <repository url> #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+    branch: [branch]
+
+위의 문서가 잘 작성되었는지 로컬 서버에서 확인합니다. 
+
+    $ hexo server 
+
+이후 나오는 주소 url 을 연결하여 잘 작동되는지 봅니다. 
+
+3. deploy 설치 
+
+    $ npm install hexo-deployer-git --save
+
+
+4. generate & deploy 
+
+    $ hexo generate 
+    $ hexo deploy 
+
+블로그를 정식으로 배포합니다. 
+
+간혹 오류가 나올 경우 다음을 실행합니다. 
+
+    $ hexo clean 
+    $ hexo generate
+    $ hexo deploy 
+
+
+### 테마 적용하기 
+
+> [theme](https://hexo.io/themes/) 
+
+1. 위 사이트에서 원하는 테마를 선택한 후, 테마의 url 정보를 복사한다. 
+2. 복사한 사이트 정보를 나의 블로그 디렉토리(로컬) 하단에 다음과 같이 복제한다. 
+
+    $ git clone {theme url} themes/next
+
+위의 예제는 next 테마를 선택해서 다운받았기 때문에, themes 디렉토리 하단에 next라는 이름으로 테마를 저장한 것임 
+
+3. .config.yml 파일 100행에 있는 theme 정보를 'next' 로 변경한다. 
+4. 테마 적용 후, 다시 배포하여 테마 적용 여부를 확인한다. 
