@@ -59,11 +59,12 @@ transform : 원근법 이동 크기 회전 기울임;
     2. trasnlateX(x) : move to (x)
     3. translateY(y) : move to (y)
     > position은 그 자리에 배치한 상태에서 고정된다면, translate는 움직임이 바뀌는 경우에 적용 
+   
     > position의 경우 애니메이션에 특화되지 않기 때문에 페이지 과부하가 생길 수 있기 때문에 애니메이션에 특화된 transition 사용하는 것이 좋다 
 
     4. scale(x, y) : size to (x, y) (배수)
-    5. scaleX(x)
-    6. scaleY(y)  
+    5. scaleX(x) : x 축의 크기가 증가 
+    6. scaleY(y)  : y 축의 크기가 증가 
 
     7. rotate(degree) : 회전 (deg)
 

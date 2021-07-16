@@ -24,7 +24,7 @@ background : 색상 이미지경로 반복 위치 스크롤특성;
 background-color : 색상(or transparent);
 ```
 
-## bacground-image
+## background-image
 
 - 요소 배경에 하나 이상의 이미지를 삽입 
 
@@ -36,7 +36,7 @@ background-image : url(), url(); // 다중 이미지 삽입은 ',' 로 구분한
 - 단축 속성을 사용할 경우 속성에 대한 작성을 완료한 후 ',' 기준으로 나눠줘야 한다. 
 
 ```css
-bacground : url('') no-repeat, url('') ...; 
+background : url('') no-repeat, url(''); 
 ```
 
 > 다중 이미지의 경우 나중에 입력한 값이 가장 뒤에 위치한다. 
@@ -61,7 +61,7 @@ background-repeat : repeat-y ; /* 수직으로 반복 */
 - 배경 이미지의 위치를 설정 
 
 ``` css
-background-position : 20% 40% ; /* x축 y축  왼쪽 상단이 0% 0%, 오른쪽 상단이 100% 100%*/ 
+background-position : 20% 40% ; /* x축 y축  왼쪽 상단이 0% 0%, 오른쪽 하단이 100% 100%*/ 
 background-position :  방향 ; /* top, bottom, right, left, center */ 
 background-position : px, cm, em 등;
 ```
@@ -78,7 +78,7 @@ background-position : px, cm, em 등;
 - 요소가 스크롤 될 때 배경 미지의 스크롤 여부 결정 
 
 ```css
-backgrou nd-attachment : scroll; /* 기본 값 */ 
+background-attachment : scroll; /* 기본 값 */ 
 background-attachment : fixed ; /* 배경 이미지가 뷰포트에 고정되어, 요소와 같이 스크롤 되지 않음 */
 background-attachment : local ; /* 요소 내 스크롤 시 배경 이미지가 같이 스크롤 됨 */ 
 ```
