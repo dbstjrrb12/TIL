@@ -1,4 +1,4 @@
-// 백준 2331 분해합 
+// 백준 2231 분해합 
 // 완전 탐색을 통해서 가능한 모든 숫자를 탐색하는 방법이다. 
 
 let target = parseInt(require('fs').readFileSync('/dev/stdin').toString().split(' '));
