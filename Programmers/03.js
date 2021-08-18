@@ -30,4 +30,19 @@ function solution(lottos, win_nums) {
     return answer;
 }
 
+
+function solution(lottos, win_nums){
+    let answer = []; 
+    let scores = [6,6,5,4,3,2,1]; 
+    let min_score = lottos.filter((e)=>win_nums.includes(e)).length; 
+    let zero_score = lottos.reduce((a, cur)=> {
+        if(cur===0) return a+(++cur); 
+        else return 0; 
+    }, 0); 
+
+    answer.push(scores[min_score+zero_score]); 
+    answer.push(scores[min_score]); 
+
+    return answer
+}
 console.log(solution([45, 4, 35, 20, 3, 9],[20, 9, 3, 45, 4, 35])); 

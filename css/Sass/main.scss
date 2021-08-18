@@ -1,0 +1,18 @@
+.container{
+    $width : 100px; 
+    $height : 200px; 
+    .item {
+        width: $width;
+        height: $height;
+        background-color: tomato;
+    };
+    margin{
+        top : 10px; 
+        left : 10px; 
+    };
+    padding{
+        top : 10px; 
+        left : 10px; 
+    }
+}
+
